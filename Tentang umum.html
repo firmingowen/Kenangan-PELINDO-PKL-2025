@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <link rel="icon" type="image/x-icon" href="logo_pelindo-removebg-preview.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tentang Umum</title>
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff82;
+      --accent:#4e555e;
+      --like:#ff6b6b;
+      --radius:12px;
+      --shadow:0 6px 20px rgba(3,22,39,0.06);
+    }
+    *{box-sizing:border-box;
+  scroll-behavior: smooth;}
+    body{
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      margin:0;
+      height:200vh;
+      background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('tkj asik.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* NAV */
+    header{
+      position:sticky;top:0;
+      background:linear-gradient(90deg, rgba(0, 0, 0, 0.344));
+      backdrop-filter:blur(4px);
+      border-bottom:1px solid rgba(11,39,76,0.05);
+      z-index:30
+    }
+    /* NAV */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+}
+
+/* beri jarak di bawah navbar agar konten tidak ketutup */
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin: 0;
+  height: 200vh;
+  background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('tkj asik.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding-top: 75px; /* biar konten gak ketimpa header */
+}
+
+/* isi header */
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand .logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #737373);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background: rgba(255,255,255,0.25);
+}
+
+.nav-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.search {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.6);
+  flex: 1;
+  min-width: 140px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* responsif */
+@media(max-width:768px){
+  nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.85);
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  header.active nav {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.7rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+.search{padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);background:rgba(255,255,255,0.584);flex:1;min-width:140px}
+
+    /* container */
+    .container{max-width:1100px;margin:28px auto;padding:0 18px}
+
+    /* grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(11,39,76,0.04);display:flex;flex-direction:column;opacity:0;transform:translateY(10px);animation:fadeInUp 0.5s ease forwards}
+    @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+
+    .card .imgwrap{position:relative;flex:0 0 200px;cursor:pointer;overflow:hidden}
+    .card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s ease}
+    .card img:hover{transform:scale(1.05)}
+    .card .content{padding:12px 14px 16px;flex:1;display:flex;flex-direction:column;gap:10px}
+    .meta{display:flex;align-items:center;gap:10px}
+    .title{font-weight:700}
+    .text{color:#23324a;font-size:14px;line-height:1.4}
+    .actions{display:flex;align-items:center;justify-content:space-between;margin-top:auto;flex-wrap:wrap;gap:6px}
+    .likebtn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(11,39,76,0.06);cursor:pointer;background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.92));transition:0.2s}
+    .likebtn:active{transform:scale(0.9)}
+    .likebtn .heart{width:18px;height:18px;display:inline-block;color:var(--like)}
+    .count{font-weight:700}
+
+    /* modal zoom */
+    .modal{position:fixed;inset:0;background:rgba(3,12,28,0.6);display:none;align-items:center;justify-content:center;padding:24px;z-index:60}
+    .modal .box{max-width:1100px;width:100%;max-height:90vh;border-radius:12px;overflow:auto;background:transparent;position:relative}
+    .modal img{width:100%;height:auto;border-radius:8px;display:block}
+    .modal .close{position:absolute;top:18px;right:18px;background:white;border-radius:999px;padding:8px;border:0;cursor:pointer;outline:none}
+    .modal .close:hover{background:#f1f1f1}
+
+    /* hero */
+    .hero{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px;background:linear-gradient(90deg, rgba(0,0,0,0.392), rgba(110,203,255,0.03));border-radius:12px;margin-bottom:18px;flex-wrap:wrap}
+    .hero h1{margin:0;font-size:22px;color:white}
+    .hero p{margin:0;color:#c9caca}
+
+    /* BAGIAN BARU */
+    .album-section{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+      margin-top:60px;
+      margin-bottom: 60px;
+      background:rgba(255, 255, 255, 0.495);
+      padding:30px;
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      flex-wrap:wrap;
+      animation:fadeInUp 1s ease forwards;
+    }
+    .album-section img{
+      width:280px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+      object-fit:cover;
+    }
+    .album-text{
+      flex:1;
+      min-width:260px;
+    }
+    .album-text h2{
+      font-size:28px;
+      margin-bottom:10px;
+      color:#000000;
+    }
+    .album-text p{
+      font-size:16px;
+      color:#2b2a2a;
+      margin-bottom:20px;
+    }
+    .album-btn{
+      background:#4e555e;
+      color:white;
+      padding:10px 22px;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+      text-decoration:none;
+      display:inline-block;
+    }
+    .album-btn:hover{
+      background:#35393f;
+      transform:translateY(-2px);
+    }
+
+    /* responsive */
+    @media(max-width:768px){
+      .album-section{flex-direction:column;text-align:center}
+      .album-section img{width:100%;max-width:320px}
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">TKJ</div>
+      <div>
+        <div style="font-weight:700;color:white;">Tentang Umum</div>
+        <div style="font-size:12px;color:#dfdede">Simpan momen, ulangi senyum</div>
+      </div>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-right">
+      <input class="search" placeholder="Cari kenangan..." aria-label="cari" />
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="Tentang%20umum.html" class="active">Tentang Umum</a>
+        <a href="#galery">Album</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Kenangan bersama orang umum</h1>
+        <p>Setiap pertemuan meninggalkan jejak. Bersama orang-orang yang datang dan pergi, kita belajar tentang arti kebersamaan dan waktu yang tak bisa diulang.</p>
+      </div>
+      <div style="font-size:13px;color:#c9c9ca">By: TKJ 2025</div>
+    </section>
+
+    <section id="all" class="grid" aria-live="polite"></section>
+
+    <!-- BAGIAN BARU -->
+    <section class="album-section" id="galery">
+      <div class="album-text">
+        <h2>Album TKJ PKL 2025</h2>
+        <p>Kumpulan momen terbaik selama masa PKL kami. Lihat keseruan, tawa, dan kenangan yang tak terlupakan bersama teman-teman TKJ 2025!</p>
+        <a href=" https://firmingowen.github.io/album-umum/" class="album-btn">Lihat Album</a>
+      </div>
+      <img src="keuangan 1.jpg" alt="Contoh Album">
+    </section>
+  </main>
+
+  <!-- Modal Zoom -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="box">
+      <button class="close" aria-label="tutup">✕</button>
+      <img src="" alt="Foto pembesaran" />
+    </div>
+  </div>
+
+  <script>
+    const items=[
+      {id:'k1',title:'Bang Iwan',text:'Terima kasih sebesar-besarnya kami sampaikan kepada Bang Iwan, yang telah memberikan kesan yang sangat baik selama kami menjalaninya PKL. Tidak hanya ilmu dan wawasan tentang pekerjaan yang Bang Iwan berikan, tetapi juga pelajaran berharga tentang arti tanggung jawab, dan kerja sama. Semua bimbingan, perhatian, serta kebaikan yang Bang Iwan tunjukkan akan selalu kami ingat dan jadikan bekal berharga untuk melangkah ke masa depan.',img:'bang iwan 1.jpg'},
+      {id:'k2',title:'Bang Wawan',text:'Terima kasih banyak, Bang Wawan, atas segala kebaikan dan bimbingan selama kami PKL. Bang Wawan selalu sabar, ramah, dan nggak segan berbagi ilmu . Kami benar-benar merasa beruntung bisa belajar dan berinteraksi langsung dengan sosok sebaik Bang Wawan. Semoga kebaikan dan semangat Bang Wawan selalu membawa inspirasi bagi kami ke depannya.',img:'Wawan.jpg'},
+      {id:'k3',title:'Kak Ira',text:'Makasih banyak, Kak Ira, udah selalu berbagi cerita, kasih kesan yang baik, dan jadi sosok yang udah kayak kakak sendiri buat kami. Dari Kak Ira, kami belajar banyak hal mulai dari ilmu kerja sampai pelajaran hidup yang berharga. Kak Ira selalu bikin suasana PKL jadi hangat, seru, dan berkesan banget. Kami bakal kangen cerita dan tawa bareng Kak Ira',img:'kak ira.jpg'},
+      {id:'k4',title:'Buk Nurul',text:'Terima kasih banyak, Bu Nurul, atas segala kebaikan dan kasih sayang yang Ibu berikan selama kami menjalani PKL. Bu Nurul sudah seperti orang tua bagi kami — selalu peduli, membimbing dengan sabar, dan memberikan banyak pengalaman berharga yang akan selalu kami ingat. Kehadiran Bu Nurul membuat tempat PKL ini terasa seperti rumah kedua bagi kami, penuh kehangatan dan kenyamanan. Semoga Bu Nurul selalu diberi kesehatan, kebahagiaan, dan kesuksesan dalam setiap langkah. Terima kasih atas semua ilmu, perhatian, dan kebaikan yang Ibu berikan. Kami tidak akan pernah lupa setiap momen berharga bersama Ibu. ❤',img:'Buk nurul.jpg'},
+      {id:'k5',title:'Buk Metria',text:'Kepada Bu Met, meskipun Ibu dikenal sebagai sosok yang pendiam, kami tetap merasakan ketulusan dan perhatian Ibu dalam setiap bimbingan yang diberikan. Dari sikap Ibu, kami belajar bahwa kebaikan tidak selalu perlu banyak kata, tetapi terlihat dari tindakan dan keteladanan. Terima kasih atas arahan, kesabaran, dan kesempatan yang Ibu berikan selama kami menjalani PKL, semoga ilmu serta pengalaman ini menjadi bekal berharga untuk langkah kami ke depan dan semoga buk MET selalu di berikan kesahatan dan keberkahan',img:'buk mate.jpg'},
+      {id:'k6',title:'Buk Erny',text:'Bu Erni yang kami sayangi, Terima kasih atas segala kebaikan dan ketulusan Ibu selama kami PKL di sini. Ibu nggak cuma jadi pembimbing bagi kami, tapi udah kayak orang tua kedua — selalu sabar, perhatian, dan penuh kasih. Kami banyak belajar, bukan cuma soal pekerjaan, tapi juga tentang tanggung jawab, kedisiplinan, dan kebersamaan. Kesan baik dari Ibu akan selalu kami ingat, dan bimbingan Ibu jadi bekal berharga buat kami ke depan. Semoga Bu Erni selalu diberi kesehatan, kebahagiaan, dan keberkahan dalam setiap langkah. Terima kasih atas semuanya, Bu ❤',img:'buk erni1.jpg'},
+      {id:'k7',title:'Pak Anton',text:'Kepada Pak Anton, terima kasih atas setiap arahan, bimbingan, dan cerita positif yang Bapak bagikan selama kami menjalani PKL. Dari setiap nasihat dan pengalaman yang Bapak sampaikan, kami mendapatkan banyak pelajaran berharga yang akan menjadi motivasi untuk melangkah ke depan. Kehadiran dan sikap Bapak meninggalkan kesan yang sangat baik bagi kami semua, dan kami sangat berterima kasih atas kebaikan serta perhatian yang Bapak tunjukkan selama ini.',img:'Pak anton.jpg'},
+      {id:'k8',title:'Pak Nirwan',text:'Kepada Pak Nirwan, terima kasih atas teladan kedisiplinan yang Bapak tunjukkan selama kami menjalani PKL. Sikap tegas dan tanggung jawab Bapak menjadi contoh berharga bagi kami dalam belajar menghadapi dunia kerja. Melalui bimbingan dan arahan Bapak, kami memperoleh banyak pengalaman serta pelajaran yang akan kami jadikan bekal untuk masa depan.',img:'pak nirwan.jpg'},
+      {id:'k9',title:'Pak Alung',text:'Kepada Pak Alung, terima kasih atas bimbingan dan kebaikan yang Bapak berikan selama kami menjalani PKL. Sikap ramah dan perhatian Bapak memberikan kesan yang sangat baik bagi kami semua. Pengalaman selama dibimbing oleh Bapak menjadi pelajaran berharga yang akan kami ingat dan jadikan motivasi untuk terus belajar dan berkemban',img:'pak alung dan wawan1.jpg'},
+      {id:'k10',title:'Bang Deni',text:'Kepada Bang Deni, terima kasih atas keceriaan dan semangat yang selalu Abang tunjukkan selama kami menjalani PKL. Sikap ramah dan humoris Abang membuat suasana kerja menjadi menyenangkan dan penuh energi positif. Kehadiran Abang memberikan kesan yang sangat baik bagi kami semua, dan kami sangat menghargai setiap bantuan serta semangat yang Abang berikan selama kami di sini.',img:'Bang deni.jpg'},
+      {id:'k11',title:'CS',text:'Langkah kecil yang penuh cerita.',img:'cs1.jpg'},
+    ];
+
+    const STORAGE_KEY='kenangan_likes_v1';
+    function loadLikes(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY))||{}}catch{return {}}}
+    function saveLikes(o){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(o))}catch{}}
+    let likes=loadLikes();
+
+    const grid=document.querySelector('#all');
+
+    function renderCards(list){
+      grid.innerHTML='';
+      list.forEach(it=>{
+        const c=likes[it.id]||0;
+        const card=document.createElement('article');
+        card.className='card';
+        card.innerHTML=`<div class="imgwrap" data-id="${it.id}"><img src="${it.img}" alt="${it.title}" loading="lazy"></div>
+        <div class="content">
+          <div class="meta"><div class="title">${it.title}</div></div>
+          <div class="text">${it.text}</div>
+          <div class="actions">
+            <button class="likebtn" data-id="${it.id}"><span class="heart">♥</span><span class="count">${c}</span></button>
+            <div style="font-size:13px;opacity:0.7">Klik foto untuk zoom</div>
+          </div>
+        </div>`;
+        grid.append(card);
+      });
+    }
+
+    function toggleMenu() {
+  document.querySelector('header').classList.toggle('active');
+}
+
+    renderCards(items);
+
+    document.body.addEventListener('click',e=>{
+      const b=e.target.closest('.likebtn');
+      if(b){
+        const id=b.dataset.id;
+        likes[id]=(likes[id]||0)+1;
+        saveLikes(likes);
+        document.querySelectorAll(`.likebtn[data-id='${id}'] .count`).forEach(x=>x.textContent=likes[id]);
+      }
+
+      const w=e.target.closest('.imgwrap');
+      if(w){
+        const it=items.find(x=>x.id===w.dataset.id);
+        if(it){modalImg.src=it.img;modalImg.alt=it.title;modal.style.display='flex';modal.setAttribute('aria-hidden','false');}
+      }
+    });
+
+    const modal=document.getElementById('modal');
+    const modalImg=modal.querySelector('img');
+    const closeBtn=modal.querySelector('.close');
+    closeBtn.addEventListener('click',()=>{modal.style.display='none';modal.setAttribute('aria-hidden','true');});
+    modal.addEventListener('click',e=>{if(e.target===modal){modal.style.display='none';modal.setAttribute('aria-hidden','true');}});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.style.display==='flex'){modal.style.display='none';}});
+
+    document.querySelector('.search').addEventListener('input',e=>{
+      const q=e.target.value.toLowerCase();
+      document.querySelectorAll('#all .card').forEach(c=>{
+        c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';
+      });
+    });
+  </script>
+</body>
+</html>

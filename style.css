@@ -1,0 +1,799 @@
+/* ===== Reset & dasar ===== */
+* { box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+html,body { height: 100%; }
+body {
+  font-family: "Poppins", sans-serif;
+  background: #051a41be;
+  -webkit-font-smoothing: antialiased;
+   
+  min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 6%;
+   position: fixed;
+    width: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.449);
+}
+
+/* logo */
+.logo {display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;}
+
+      .logo img {width: 170px; height: auto;
+    }
+
+/* tautan nav - desktop */
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color .2s ease;
+}
+
+.nav-links ul li a:hover { color: #f44336; }
+
+.nav-links ul li a::after { content: '';
+width: 100%; 
+height: 2px;
+width: 0%;
+background: #f44336;
+display: block;
+margin: auto;
+transition: 0.2s;
+}
+.nav-links ul li a:hover::after { width: 100%; }
+
+
+/* tombol hamburger (default hidden di desktop) */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  position: relative;
+}
+.hamburger::before, .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+}
+.hamburger::before { top: -7px; }
+.hamburger::after  { top: 7px; }
+
+/*pembuka*/
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.7)),url(bang\ iwan\ ultah.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;}
+
+.text-box {
+  width: 90%;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 62px;
+}
+.text-box p {
+  margin: 10px 0 40px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.hero-btn{
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 12px 34px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover{
+  background-color: #f44336;
+  border: none;
+  color: #ffffff;
+}
+
+
+.anggota{
+  width: 100%;
+  padding: 50px 0;
+  background-image: linear-gradient(rgba(4,9,30,0.7)),url(foto\ bertiga.jpg);
+  text-align: center;
+}
+.anggota h2{
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.anggota-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.anggota-card{
+  background: #ffffffa7;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.anggota-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+.anggota-card img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* ===== KONTEN UTAMA ===== */
+.main-wrap2 { width: 100%; display: flex; justify-content: center; padding: 40px 20px; min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.7)),url(buk\ nurul\ dan\ kak\ ika\ 1.jpg );
+  background-position: center;
+  background-size: cover;}
+
+.main-wrap { width: 100%; display: flex; justify-content: center; padding: 40px 20px; min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.7)),url(tkj1.jpg );
+  background-position: center;
+  background-size: cover;}
+.content {
+  width: min(1200px, 96%);
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery img :hover{
+  transform: scale(1.05);
+}
+
+/* galeri grid (desktop: 2 kolom kecil) */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  align-self: flex-start;
+}
+.gallery img {
+  width: 330px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+/* teks kanan */
+.text-section { text-align: left; min-width: 240px; }
+.text-section .big {
+  font-size: 64px;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: 1px;
+}
+.text-section .script {
+  font-size: 60px;
+  font-style: initial;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.text-section .cta-button {
+    margin-top: 25px;
+  display: inline-block;
+  padding: 15px 28px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.text-section .cta-button:hover {
+  background-color: #686868;
+  color: white;
+}
+
+.about-us{background-image: linear-gradient(rgba(4,9,30,0.7)),url(gabut\ umum1.jpg );
+  background-position: center;
+  background-size: cover;
+  padding: 50px 0;
+}
+
+.about-us h1 {
+ color: white;
+  margin: 50px auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.tentang {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 10%;
+      background-color: #ffffffa7;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      margin: 50px auto;
+      max-width: 1000px;
+    }
+
+    .tentang img {
+      width: 40%;
+      border-radius: 15px;
+      margin-right: 30px;
+    }
+
+    .tentang-text {
+      width: 60%;
+    }
+
+    .tentang-text h2 {
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .tentang-text p {
+      color: #555;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .kontak-section {
+      text-align: center;
+      padding: 60px 10%;
+      background-image: linear-gradient(rgba(4,9,30,0.7)),url(foto\ 1.jpg );
+  background-position: center;
+  background-size: cover;
+  padding: 50px 0;
+    }
+
+    .kontak-section h2 {
+      font-size: 32px;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+
+    .kontak-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .kontak-card {
+      background-color: #ffffffa5;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .kontak-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .kontak-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .kontak-card h3 {
+      font-size: 20px;
+      color: #222;
+      margin: 10px 0 5px;
+    }
+
+    .kontak-card p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .kontak-card a {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .kontak-card a:hover {
+      background-color: #0056b3;
+      color: #dedcdc;
+    }
+
+/* ===== CHAT BOX ===== */
+
+ .wrapper {
+     text-align: center;
+      padding: 60px 10%;
+      background-image: linear-gradient(rgba(4,9,30,0.7)),url(Dermaga.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 50px 0;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .chat-container {
+      background: rgba(255, 255, 255, 0.508);
+      width: 60%;
+      min-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: absolute;
+      left: 20%;
+    }
+
+    .message {
+      display: flex;
+      align-items: flex-start;
+      background: #f8f9fba7;
+      padding: 12px;
+      border-radius: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .profile {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      margin-right: 15px;
+      object-fit: cover;
+      border: 2px solid #ddd;
+    }
+
+    .text {
+      flex: 1;
+    }
+
+    .name {
+      font-weight: 600;
+      color: #272626;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .content {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .wrapper h2 {
+      font-size: 32px;
+      color: #ffffff;
+  text-align: center;
+      margin-bottom: 40px;
+  
+    }
+
+    
+   /* === STYLE KHUSUS PENILAIAN TOKO === */
+    .toko-review {
+      font-family: "Poppins", sans-serif;
+      background-image: linear-gradient(rgba(4,9,30,0.7)),url(foto\ umum\ ke\ 3.jpg);
+  background-position: center;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+  background-size: cover;
+    }
+
+    .toko-review .review-container {
+      background: #ffffffb5;
+      width: 90%;
+      max-width: 1100px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+
+    .toko-review h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .toko-review .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .toko-review .card {
+      background: #f9fafb;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .toko-review .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .toko-review .profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .toko-review .avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #d1d5db;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #333;
+      font-size: 18px;
+    }
+
+    .toko-review .name {
+      font-weight: 600;
+      font-size: 16px;
+      color: #111;
+    }
+
+    .toko-review .stars {
+      color: #facc15;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .toko-review .comment {
+      color: #555;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+   .avatar {
+  width: 60px;              /* ukuran lebar avatar */
+  height: 60px;             /* tinggi sama biar bulat sempurna */
+  border-radius: 50%;       /* bikin bulat */
+  background: #d1d5db;      /* warna dasar abu muda */
+  display: flex;            /* biar isi di tengah */
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+  flex-shrink: 0;           /* biar gak gepeng kalau di flexbox */
+  aspect-ratio: 1 / 1;      /* pastikan bentuk selalu 1:1 (bulat di semua perangkat) */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* efek bayangan lembut */
+}
+
+
+/* Warna avatar per orang (opsional) */
+.orang1 .avatar { background: #a7f3d0; }
+.orang2 .avatar { background: #bfdbfe; }
+.orang3 .avatar { background: #fcd34d; }
+.orang4 .avatar { background: #fecaca; }
+.orang5 .avatar { background: #ddd6fe; }
+.orang6 .avatar { background: #e5e7eb; }
+    /* RESPONSIF HP */
+    @media (max-width: 900px) {
+      .toko-review .reviews {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .toko-review .reviews {
+        grid-template-columns: 1fr;
+      }
+
+      .toko-review .review-container {
+        padding: 20px;
+        margin: 20px 10px;
+      }
+
+      .toko-review .card {
+        margin: 0 auto;
+      }
+    } 
+
+    .pekerja{
+      display: flex;
+    justify-content: center;
+     background-image: linear-gradient(rgba(4,9,30,0.7)),url(foto\ bertiga.jpg );
+
+    background-size: cover;
+    background-position: center ;
+    }
+
+.kenangan-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    
+  }
+
+  .kenangan-container h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 25px;
+  }
+
+  .kenangan {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .kenangan-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 12px 18px;
+    background: #e3e7f1;
+  }
+
+  .kenangan-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .arrow.open {
+    transform: rotate(90deg);
+  }
+
+  .kenangan-content {
+    display: none;
+    padding: 15px 20px;
+  }
+
+  .kenangan-body {
+    display: flex;
+    align-items: center;
+  }
+
+  .kenangan-content img {
+    width: 130px;
+    height: 130px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  .kenangan-body p {
+    margin: 0;
+    color: #444;
+  }
+
+  .like-btn {
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    background: #f2f3f7;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+
+  .like-btn:hover {
+    background: #e0e2eb;
+  }
+
+  .like-btn.liked {
+    background: #ff6b81;
+    color: white;
+  }
+
+  .like-btn span {
+    margin-left: 6px;
+  }
+
+  /* --- Responsif Smartphone --- */
+  @media (max-width: 600px) {
+    .kenangan-content {
+      padding: 10px;
+    }
+
+    .kenangan-body {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .kenangan-content img {
+      width: 100%;
+      height: auto;
+      margin: 0 0 10px 0;
+    }
+
+    .kenangan-header h3 {
+      font-size: 1rem;
+    }
+  }
+    
+    /* Responsive: untuk tampilan HP */
+    @media (max-width: 768px) {
+      .chat-container {
+        width: 90%;
+        padding: 20px;
+      }
+
+      .profile {
+        width: 45px;
+        height: 45px;
+      }
+    }
+/* ===== RESPONSIVE: smartphone & tablet kecil ===== */
+@media (max-width: 900px) {
+  .content { gap: 28px; padding: 0 8px; }
+
+  /* teks lebih kecil, center agar rapi */
+  .text-section { text-align: center; width: 100%; }
+  .text-section .big { font-size: 44px; }
+  .text-section .script { font-size: 26px; margin:px; }
+
+  /* gallery: gambar lebih besar penuh kolom 2 -> tetap rapi */
+  .gallery img { width: 160px; height: 160px; }
+}
+
+ .chat-container{
+        width: 90%;
+        left: 5%;
+      }
+
+
+/* Mobile kecil: tata ulang jadi kolom tunggal, nav jadi hamburger */
+@media (max-width: 600px) {
+  .logo img {width: 110px; height: auto;
+    }
+  .navbar { padding: 10px 16px; }
+
+  /* sembunyikan menu desktop, tampilkan tombol hamburger */
+  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; }
+
+  /* saat .nav-links.open -> tampil sebagai dropdown fullwidth */
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: 56px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.611);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,1.12);
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+    min-width: 140px;
+  }
+  .nav-links.open a { padding: 8px 12px; display: block; }
+
+  /* layout content jadi kolom */
+  .content { flex-direction: column; align-items: center; padding: 20px 12px; gap: 20px; }
+
+  /* gallery jadi 1 kolom: gambar responsif */
+  .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .gallery img { width: 100%; height: 180px; border-radius: 8px; }
+
+  /* teks : ukur lebih kecil */
+  .text-section .big { font-size: 36px; }
+.tentang {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .tentang img {
+        width: 80%;
+        margin: 0 0 20px 0;
+      }
+
+      .tentang-text {
+        width: 100%;
+      }
+     .chat-container{
+        width: 90%;
+        left: 5%;
+      }}
